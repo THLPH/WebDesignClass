@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UPCOMING - Connor Tran Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>CONNOR TRAN / UPCOMING</h1>
+        <p class="course-id">CS-2026 / WEB_PROG</p>
+
+        <nav>
+            <a href="index.html">01. HOME</a>
+            <a href="about.html">02. ABOUT</a>
+            <a href="projects.html">03. PROJECTS</a>
+            <a href="upcoming.html" class="active">04. UPCOMING</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <p style="max-width: 600px; margin-bottom: 60px; opacity: 0.8;">
+                Development log for upcoming systems engineering initiatives. <br>
+                Current focus: <strong>DOM Manipulation &amp; Asynchronous Network Request Handling</strong>.
+            </p>
+
+            <article>
+                <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--surface-light); padding-bottom: 20px; margin-bottom: 20px;">
+                    <h2 style="text-transform: uppercase; margin: 0;">01. Pixiv Batch Downloader</h2>
+                    <img src="media/pixiv.png" alt="Pixiv Platform Logo" style="height: 40px; border: none; width: auto; margin: 0;">
+                </div>
+                
+                <p style="max-width: 600px; margin-bottom: 40px; opacity: 0.9;">
+                    Research log for future systems engineering initiatives. <br>
+                    Current phase: <strong>Logic Mapping &amp; Technical Feasibility Study</strong>.
+                </p>
+
+                <h3 style="text-transform: uppercase; font-size: 0.9rem; margin-top: 40px;">Technical Architecture &amp; Compatibility Matrix</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>LAYER</th>
+                            <th>COMPONENT</th>
+                            <th>RESPONSIBILITY</th>
+                            <th style="text-align: center;">BROWSER SUPPORT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td rowspan="2" style="font-weight: bold; background-color: rgba(216, 209, 188, 0.1);">FRONTEND<br>(DOM)</td>
+                            <td>Content Script</td>
+                            <td>"Scrapes" the DOM to find high-res URLs</td>
+                            <td style="text-align: center;">Chrome &amp; Firefox</td>
+                        </tr>
+                        <tr>
+                            <td>Popup UI</td>
+                            <td>User Interface for batch selection</td>
+                            <td style="text-align: center;">Chrome &amp; Firefox</td>
+                        </tr>
+                        
+                        <tr>
+                            <td rowspan="2" style="font-weight: bold; background-color: rgba(216, 209, 188, 0.1);">BACKEND<br>(Logic)</td>
+                            <td>Service Worker</td>
+                            <td>Manages chrome.downloads API</td>
+                            <td style="text-align: center;">Chrome (V3)</td>
+                        </tr>
+                        <tr>
+                            <td>NetRequest</td>
+                            <td>Modifies Headers (Referer Spoofing)</td>
+                            <td style="text-align: center;">Firefox (V2)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="text-transform: uppercase; font-size: 0.9rem; margin-top: 40px;">The "Hotlink" Challenge</h3>
+                <div style="border: 1px dashed var(--surface-light); padding: 20px; opacity: 0.9;">
+                    <p>
+                        <strong>Problem:</strong> Pixiv servers return a 403 Forbidden error if the request originates from outside their domain.<br>
+                        <strong>Solution:</strong> We must inject a declarative rule:
+                    </p>
+<pre style="background-color: #1a1a1a; padding: 15px; border-left: 3px solid var(--surface-light);">
+<code>
+request -> i.pximg.net 
+  |_ SET Header: Referer = "https://www.pixiv.net/"
+</code>
+</pre>
+                    <p>
+                        This technique &mdash; known as "Referer Spoofing" &mdash; validates the extension as a legitimate browser agent.
+                    </p>
+                </div>
+            </article>
+
+            <section style="margin-top: 60px; border-top: 1px solid #444; padding-top: 20px;">
+                <h3 style="text-transform: uppercase; font-size: 0.9rem;">Deployment Status</h3>
+                <p>
+                    Targeting <strong>Manifest V3</strong> standards for Chrome Web Store compliance. <br>
+                    Firefox porting planned via <a href="https://github.com/mozilla/webextension-polyfill" target="_blank" style="color: var(--surface-light);">WebExtension Polyfill</a>.
+                </p>
+            </section>
+        </section>
+    </main>
+
+ <footer>
+        <div class="footer-links">
+            <span>External Data:</span>
+            <a href="https://github.com/THLPH" target="_blank" rel="noopener noreferrer">[ GITHUB_REPOS ]</a>
+            <a href="https://www.linkedin.com/in/thlph/" target="_blank" rel="noopener noreferrer">[ LINKEDIN_PROFILE ]</a>
+            <a href="mailto:htran92@student.gsu.edu" target="_blank" rel="noopener noreferrer">[ CONTACT_ME ]</a>
+        </div>
+        <p>© 2026 Connor Tran — Systems Engineering Portfolio</p>
+    </footer>
+
+</body>
+</html>
