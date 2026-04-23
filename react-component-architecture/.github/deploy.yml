@@ -15,19 +15,27 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
+          # Tell the cache exactly where to find the lock file
+          cache-dependency-path: './react-component-architecture/package-lock.json' 
+          
       - name: Install and Build
+        # This tells GitHub to run the commands inside your subfolder
+        working-directory: ./react-component-architecture
         run: |
           npm install
           npm run build
+          
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './build'
+          # Tell GitHub exactly where the output build folder is
+          path: './react-component-architecture/build'
 
   deploy:
     needs: build

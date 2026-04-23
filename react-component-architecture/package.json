@@ -2,6 +2,7 @@
   "name": "react-assignment",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://THLPH.github.io/WebDesignClass",
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
