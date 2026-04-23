@@ -1,0 +1,80 @@
+/* --- CSS Design Tokens --- */
+:root {
+  --card-bg: #ffffff;
+  --card-radius: 14px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --title-color: #0f172a;
+  --accent-color: #3b82f6;
+  --bg-color: #f8fafc;
+}
+
+/* --- Global Styles --- */
+body {
+  background-color: var(--bg-color);
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  padding: var(--space-lg);
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+/* --- Task Card Styles (Workshop Requirement) --- */
+.counter, .filter-list, .hello-world-container {
+  background: var(--card-bg);
+  border-radius: var(--card-radius);
+  padding: var(--space-md);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+/* --- Typography --- */
+h1, h3 {
+  color: var(--title-color);
+  margin-top: 0;
+}
+
+/* --- Component Specifics --- */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 12px 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+}
+
+button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background-color: #2563eb;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+li:last-child {
+  border-bottom: none;
+}
