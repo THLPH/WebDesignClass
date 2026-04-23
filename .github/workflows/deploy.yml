@@ -9,6 +9,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -19,13 +22,9 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
-          # Tell the cache exactly where to find the lock file
-          cache-dependency-path: './react-component-architecture/package-lock.json' 
-          
+          node-version: 24
+
       - name: Install and Build
-        # This tells GitHub to run the commands inside your subfolder
         working-directory: ./react-component-architecture
         run: |
           npm install
@@ -34,7 +33,6 @@ jobs:
       - name: Upload Build Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Tell GitHub exactly where the output build folder is
           path: './react-component-architecture/build'
 
   deploy:
